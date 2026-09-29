@@ -1231,6 +1231,40 @@ $$\frac{BZ}{BA}=\frac{CZ}{CA}\Leftrightarrow\frac{BZ}{CZ}=\frac{BA}{CA}.$$
 Vậy $Z$ (và tương tự $Y$) nằm trên đường tròn Apollonius ứng với đỉnh $A$ và đoạn $BC$ (quỹ tích các điểm $K$ thỏa $KB/KC=AB/AC$). Vì $Y$, $Z$ nằm trên $AD$ và cũng nằm trên đường tròn Apollonius này, ta dẫn đến mâu thuẫn nếu $Y$, $Z\neq A$ và $AD$ không trùng với đường tròn Apollonius đó. (Lưu ý rằng $Y\neq A$ và $Z\neq A$. Ngoài ra, nếu một trong hai điểm nằm trên $BC$ thì suy ra $AB=AC$, mâu thuẫn với giả thiết bài toán khi $AB\neq AC$.)
 
 Do đó $P\equiv P'$ và chứng minh hoàn tất. $\square$`
+        },
+        {
+          ten: "Ví dụ 6 (Định lí Brianchon)",
+          de: String.raw`Nếu một lục giác ngoại tiếp đường tròn thì các đường thẳng nối các đỉnh đối diện đồng quy.`,
+          loiGiai: String.raw`<div class="img-placeholder" data-img-slot="brianchon"></div>
+
+Xét lục giác $ABCDEF$ tiếp xúc đường tròn tại các điểm $T,J,M,L,K,H$ (như hình vẽ). Trên các tia $FA,DC,BA,DE,BC,FE$ lần lượt lấy các điểm $H',M',T',L',J',K'$ sao cho
+$$HH'=MM'=TT'=LL'=JJ'=KK'.$$
+Dựng đường tròn $(R)$ tiếp xúc với $HH',MM'$ tại $H',M'$. Tương tự cho các đường tròn $(Q),(P)$.
+
+Khi đó do $FH'=FK'$ và $CM'=CJ'$ nên $FC$ là trục đẳng phương của $(R),(Q)$. Tương tự $BE$ là trục đẳng phương của $(P),(Q)$ và $AD$ là trục đẳng phương của $(P),(R)$. Do đó suy ra $AD,BE,CF$ đồng quy tại tâm đẳng phương của ba đường tròn. $\square$`
+        },
+        {
+          ten: "Ví dụ 7 (USAMO 2009)",
+          de: String.raw`Cho hai đường tròn không đồng tâm $(O_1),(O_2)$. Đường thẳng $d_1$ qua $O_1$ cắt $(O_2)$ tại $P,Q$. Đường thẳng $d_2$ qua $O_2$ cắt $(O_1)$ tại hai điểm $R,S$. Chứng minh rằng nếu $P,Q,R,S$ cùng nằm trên một đường tròn thì tâm của đường tròn đó thuộc trục đẳng phương của hai đường tròn $(O_1),(O_2)$.`,
+          loiGiai: String.raw`<div class="img-placeholder" data-img-slot="usamo-2009-1"></div>
+
+**Trường hợp 1:** $d_1$ cắt $d_2$.
+
+Gọi $M=d_1\cap d_2$ và $P,Q,R,S$ cùng thuộc đường tròn tâm $O$. Khi đó
+$$\mathscr{P}_{M/(O_1)}=\overline{MR}\cdot\overline{MS}=\mathscr{P}_{M/(O)}=\overline{MP}\cdot\overline{MQ}=\mathscr{P}_{M/(O_2)},$$
+nên suy ra $M$ thuộc trục đẳng phương của $(O_1)$ và $(O_2)$. Hơn nữa $MO_1$, $MO_2$ là các đường cao của $\triangle OO_1O_2$ nên $M$ là trực tâm của tam giác này. Do đó $OM\perp O_1O_2$. Vậy $O$ cũng thuộc trục đẳng phương.
+
+<div class="img-placeholder" data-img-slot="usamo-2009-2"></div>
+
+**Trường hợp 2:** $d_1$ song song $d_2$.
+
+Gọi $M,N$ lần lượt là trung điểm $PQ,RS$. Khi đó do $PQ$ song song $RS$ nên nếu $P,Q,R,S$ cũng thuộc một đường tròn thì $MN\perp PQ$ tại $M$; mặt khác $O_2\in RS$ và $O_2M\perp PQ$ tại $M$ nên suy ra $N\equiv O_2$. Tương tự ta cũng có $O_1\equiv M$.
+
+Gọi $X,Y$ là giao điểm của $(O_1),(O_2)$ và $O=O_1O_2\cap XY$. Ta chứng minh $O$ là tâm của $(PQRS)$.
+
+Ta có
+$$OQ^{2}=OP^{2}=OO_1^{2}+O_1P^{2}=OO_1^{2}+O_2P^{2}-O_1O_2^{2}=OO_1^{2}+O_2X^{2}-O_1O_2^{2}=OO_1^{2}+OO_2^{2}+OX^{2}-O_1O_2^{2}=\dfrac{1}{4}XY^{2}+OO_1^{2}+OO_2^{2}-O_1O_2^{2}=k.$$
+Chứng minh tương tự ta cũng suy ra được $OS=OR=k$. Vậy $O$ là tâm của $(PQRS)$ và $O\in XY$ là trục đẳng phương của $(O_1),(O_2)$. $\square$`
         }
       ],
       baiTaps: [
