@@ -1145,7 +1145,7 @@ $$\mathscr{P}_{M/(O_1)} = \mathscr{P}_{M/(O_2)}.$$`
           loiGiai: String.raw`Xét tam giác $ABC$ có tâm đường tròn nội tiếp và ngoại tiếp lần lượt là $I,O$.
 Tia $BI$ cắt đường tròn tại $M$, $MK$ là đường kính. $ID$ vuông góc với $BC$ tại $D$.
 
-<div class="img-placeholder" data-img-slot="euler-1"></div>
+<div class="img-placeholder" data-img-slot="euler-1" data-img-src="vd1.png"></div>
 
 Để tính khoảng cách giữa $I$ và $O$, ta tính phương tích của $I$ so với $(O)$.
 
@@ -2037,6 +2037,17 @@ function enhanceImagePlaceholders(container){
     }
 
     showImage(existing);
+
+    // Ảnh nằm cùng thư mục với index.html (khai báo bằng data-img-src): tự động hiển thị nếu tồn tại
+    if(el.dataset.imgSrc){
+      const probe = new Image();
+      probe.onload = () => {
+        showImage(el.dataset.imgSrc);
+        btnRemove.style.display = "none";
+        btnUpload.style.display = "none";
+      };
+      probe.src = el.dataset.imgSrc;
+    }
 
     btnUpload.addEventListener("click", () => fileInput.click());
     btnRemove.addEventListener("click", () => {
