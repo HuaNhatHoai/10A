@@ -542,6 +542,22 @@ body{
   border-color:var(--accent);
   color:#fff;
 }
+.sub-tab.has-answer{
+  border-color:var(--amber);
+  color:var(--amber);
+  background:var(--amber-soft);
+}
+.sub-tab.has-answer:hover{
+  background:var(--amber-soft);
+  color:var(--ink);
+  border-color:var(--amber);
+}
+.sub-tab.has-answer.active{
+  background:var(--amber);
+  border-color:var(--amber);
+  color:#fff;
+}
+
 
 .vidu{
   border:1px solid var(--line);
@@ -1280,7 +1296,38 @@ Chứng minh tương tự ta cũng suy ra được $OS=OR=k$. Vậy $O$ là tâm
 $$\alpha\overrightarrow{PA}+\beta\overrightarrow{PB}+\gamma\overrightarrow{PC}=\overrightarrow{0}$$
 trong đó $\alpha,\beta,\gamma$ là các số thực. Tính phương tích của điểm $P$ đối với đường tròn ngoại tiếp tam giác $ABC$ theo $\alpha,\beta,\gamma$ và độ dài ba cạnh của tam giác $ABC$.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải 1.**
+
+Ta có
+$$\begin{align*}(\alpha +\beta+\gamma)R^2=\alpha OA^2+\beta OB^2+\gamma OC^2&=  \alpha (  \overrightarrow{OP}+\overrightarrow{PA})^2+\beta (\overrightarrow{OP}+\overrightarrow{PB})^2+\gamma (\overrightarrow{OP}+\overrightarrow{PC})^2\\& =(\alpha +\beta +\gamma) PO^2+\alpha PA^2+\beta PB^2+\gamma PC^2\end{align*}$$
+
+Mặt khác
+$$\begin{align*}0&=( \alpha \overrightarrow{PA}+\beta \overrightarrow{PB}+\gamma \overrightarrow{PC})^2\\&=\alpha^2PA^2+\beta^2 PB^2+\gamma^2 PC^2+2(\alpha\beta  \overrightarrow{PA}\cdot\overrightarrow{PB} +\beta\gamma  \overrightarrow{PB}\cdot\overrightarrow{PC} +\gamma\alpha \overrightarrow{PA}\cdot\overrightarrow{PC} )\\&=\alpha(\alpha+\beta+\gamma)PA^2+\beta(\alpha+\beta+\gamma)PB^2+\gamma(\alpha+\beta+\gamma)PC^2-(\alpha\beta AB^2+\beta\gamma BC^2+\gamma\alpha CA^2)\\&=(\alpha+\beta+\gamma)(\alpha PA^2+\beta PB^2+\gamma PC^2)-(\alpha\beta c^2+\beta\gamma a^2+\gamma\alpha b^2)\end{align*}$$
+
+Suy ra
+$$\alpha PA^2+\beta PB^2+\gamma PC^2=\dfrac{\beta\gamma a^2+\gamma\alpha b^2+\alpha\beta c^2}{\alpha+\beta+\gamma}$$
+
+Vậy
+$$\mathscr{P}_{P/(O)}=OP^2-R^2=-\dfrac{ \alpha PA^2+\beta PB^2+\gamma PC^2}{\alpha+\beta+\gamma}=-\dfrac{\beta\gamma a^2+\gamma\alpha b^2+\alpha\beta c^2}{(\alpha+\beta+\gamma)^2}.$$
+
+**Lời giải 2 (Võ Thế Vượng).**
+
+Gọi $O$ và $R$ lần lượt là tâm và bán kính của đường tròn ngoại tiếp tam giác $ABC$. Đặt $a = BC$, $b = CA$, $c = AB$.
+
+Ta có:
+$$\begin{align*}&\alpha \overrightarrow{PA} + \beta \overrightarrow{PB} + \gamma \overrightarrow{PC} = \overrightarrow{0} \\&\Rightarrow \alpha (\overrightarrow{OA} - \overrightarrow{OP}) + \beta (\overrightarrow{OB} - \overrightarrow{OP}) + \gamma (\overrightarrow{OC} - \overrightarrow{OP}) = \overrightarrow{0} \\&\Rightarrow \alpha \overrightarrow{OA} + \beta \overrightarrow{OB} + \gamma \overrightarrow{OC} = \overrightarrow{OP} (\alpha + \beta + \gamma) \\&\Rightarrow (\alpha \overrightarrow{OA} + \beta \overrightarrow{OB} + \gamma \overrightarrow{OC})^2 = OP^2 (\alpha + \beta + \gamma)^2 \\&\Rightarrow OP^2 (\alpha + \beta + \gamma)^2 = \alpha^2 OA^2 + \beta^2 OB^2 + \gamma^2 OC^2 + 2\alpha\beta \overrightarrow{OA} \cdot \overrightarrow{OB} + 2\alpha\gamma \overrightarrow{OA} \cdot \overrightarrow{OC} + 2\beta\gamma \overrightarrow{OB} \cdot \overrightarrow{OC} \\&\Rightarrow OP^2 (\alpha + \beta + \gamma)^2 = R^2 (\alpha^2 + \beta^2 + \gamma^2) + 2R^2 (\alpha\beta \cos \widehat{AOB} + \alpha\gamma \cos \widehat{AOC} + \beta\gamma \cos \widehat{BOC})\end{align*}$$
+
+Mà ta có:
+$$\begin{align*}\cos \widehat{AOB} &= \frac{2R^2 - c^2}{2R^2} = 1 - \frac{c^2}{2R^2} \\\cos \widehat{AOC} &= \frac{2R^2 - b^2}{2R^2} = 1 - \frac{b^2}{2R^2} \\\cos \widehat{BOC} &= \frac{2R^2 - a^2}{2R^2} = 1 - \frac{a^2}{2R^2}\end{align*}$$
+
+Thay vào biểu thức trên, ta được:
+$$\begin{align*}OP^2 (\alpha + \beta + \gamma)^2 &= R^2 (\alpha^2 + \beta^2 + \gamma^2) + 2R^2 (\alpha\beta + \alpha\gamma + \beta\gamma) - (\alpha\beta c^2 + \alpha\gamma b^2 + \beta\gamma a^2) \\&= R^2 (\alpha^2 + \beta^2 + \gamma^2 + 2\alpha\beta + 2\alpha\gamma + 2\beta\gamma) - (\alpha\beta c^2 + \alpha\gamma b^2 + \beta\gamma a^2) \\&= R^2 (\alpha + \beta + \gamma)^2 - (\alpha\beta c^2 + \alpha\gamma b^2 + \beta\gamma a^2)\end{align*}$$
+
+Suy ra:
+$$OP^2 = R^2 - \frac{\alpha\beta c^2 + \alpha\gamma b^2 + \beta\gamma a^2}{(\alpha + \beta + \gamma)^2}$$
+
+Vậy phương tích của điểm $P$ đối với đường tròn ngoại tiếp tam giác $ABC$ là:
+$$\mathscr{P}_{P/(O)} = OP^2 - R^2 = - \frac{\alpha\beta c^2 + \alpha\gamma b^2 + \beta\gamma a^2}{(\alpha + \beta + \gamma)^2}.$$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ cân tại $A$ có $\widehat{BAC}=20^{\circ}$. $D$ là điểm trên cạnh $BC$ sao cho $DC=2BD$. Gọi $E$ là hình chiếu vuông góc của $C$ lên $AD$. Tính số đo góc $\widehat{AEB}$.`,
@@ -1301,7 +1348,15 @@ $$BF\cdot BC+BE\cdot BA=BD^2.$$`,
         {
           de: String.raw`Cho tam giác $ABC$ có $AD$ là đường phân giác trong, $D$ thuộc $BC$. Đường tròn qua $A$ tiếp xúc với $BC$ tại $D$ cắt $AC$ tại $M$. Gọi $P$ là giao điểm thứ hai của $BM$ và đường tròn. Tia $AP$ cắt $BC$ tại $J$. Chứng minh rằng $J$ là trung điểm của $BD$.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt6-angle-bisector"></div>
+
+Ta có
+$$\begin{align*}\widehat{CBM}&=\widehat{CDM}-\widehat{DMP}=\widehat{MAD}-\widehat{PAD}\\&=\widehat{BAD}-\widehat{PAD}=\widehat{BAP}.\end{align*}$$
+Từ đó chứng minh được $\triangle JBP \sim \triangle JAB$. Suy ra
+$$JB^2=JP\cdot JA=\mathscr{P}_{J/(ADM)}=JD^2.$$
+Vậy $JB=JD$. $\square$`
         },
         {
           de: String.raw`Gọi $M$ là giao điểm của hai đường chéo $AC$, $BD$ của tứ giác lồi $ABCD$. Đường phân giác của góc $\widehat{ACD}$ cắt tia $BA$ tại $K$. Giả sử $MA\cdot MC+MA\cdot CD=MB\cdot MD$. Chứng minh rằng tứ giác $BCDK$ nội tiếp.`,
@@ -1311,7 +1366,21 @@ $$BF\cdot BC+BE\cdot BA=BD^2.$$`,
         {
           de: String.raw`Cho tam giác $ABC$ nội tiếp đường tròn $(O)$ có ba đường cao $AD$, $BE$, $CF$ và $G$ là trọng tâm. Tia $AG$, $GD$ cắt đường tròn tại điểm thứ hai lần lượt là $M$, $N$. Chứng minh rằng $M$, $N$, $E$, $F$ cùng thuộc một đường tròn.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt8-orthic-centroid"></div>
+
+Đường thẳng qua $A$ vuông góc với $AD$ cắt đường tròn tại điểm thứ hai là $K$. Gọi $H$ là hình chiếu của $K$ lên $BC$. Khi đó $P$ là trung điểm $DH$. Gọi $G'=DK\cap AP$ thì $\dfrac{G'A}{G'P}=\dfrac{DP}{AK}=\dfrac{1}{2}$ nên $G'\equiv G$.
+
+Từ đó suy ra
+$$\widehat{GDP}= \widehat{GKA}= \widehat{GMN}$$
+và suy ra tứ giác $MNDP$ nội tiếp.
+
+Nếu tam giác $ABC$ cân tại $A$ thì $M$, $N$ trùng nhau nên ta có ngay kết quả.
+
+Nếu tam giác $ABC$ không cân tại $A$, gọi $S$ là giao điểm của $EF$ và $BC$ và $M'$ là giao điểm của $SN$ và đường tròn tâm $O$. Khi đó ta có
+$$SN\cdot SM'=SB\cdot SC=SE\cdot SF=SD\cdot SP$$
+Từ đó suy ra tứ giác $M'NDP$ nội tiếp. Khi đó đường tròn tâm $O$ giao $MNDP$ tại $N$, $M$, $M'$ nên suy ra $M$ và $M'$ trùng nhau. Vậy $S$, $N$, $M$ thẳng hàng và suy ra tứ giác $MNFE$ nội tiếp. $\square$`
         },
         {
           de: String.raw`Cho hai điểm $A$, $B$ cố định, $C$ là điểm bất kì trên nửa mặt phẳng có bờ là đường thẳng $AB$. Dựng về phía ngoài của tam giác $ABC$ các tam giác đều $ADC$, $BCE$. Gọi $P$ là giao điểm thứ hai của $(ADC)$ và $(BCE)$. Chứng minh rằng $CP$ luôn đi qua một điểm cố định.`,
@@ -1331,7 +1400,45 @@ $$BF\cdot BC+BE\cdot BA=BD^2.$$`,
         {
           de: String.raw`Cho tam giác $ABC$ nội tiếp đường tròn tâm $O$ có $H$ là trực tâm, các đường cao $BE$, $CF$, $AD$. $FD$ cắt $BE$ tại $M$, $FC$ cắt $DE$ tại $N$. Cho $K$ là điểm đối xứng của $O$ qua $BC$. Chứng minh rằng $MN$ vuông góc với $AK$.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải 1.**
+
+<div class="img-placeholder" data-img-slot="bt12-euler"></div>
+
+Do $K$ đối xứng với $O$ qua $BC$ nên $OK=AH$ và $K$ cũng là tâm của đường tròn ngoại tiếp tam giác $HBC$. Gọi $L$ là giao điểm của $OH$ và $AK$. Khi đó $L$ là trung điểm của $OH$ nên cũng là tâm của đường tròn ngoại tiếp tam giác $DEF$ (<strong style="color:var(--danger)">đường tròn Euler</strong> của tam giác $ABC$). Ta có
+$$\mathscr{P}_{M/(K)}=\overline{MH}\cdot \overline{MB}=\overline{MD}\cdot \overline{MF}= \mathscr{P}_{M/(L)}$$
+Vậy $M$ thuộc trục đẳng phương của $(L)$ và $(K)$. Chứng minh tương tự ta cũng suy ra được $N$ thuộc trục đẳng phương này. Vậy $MN$ là trục đẳng phương nên vuông góc với $LK$.
+
+**Lời giải 2 (Đặng Đức Huy).**
+
+Gọi $X$ là trung điểm của $BC$, $Eu$ là tâm Euler của tam giác $ABC$.
+
+**Nhận xét 1:** $K$ là tâm của đường tròn $(BHC)$.
+
+Từ các kết quả quen thuộc: $OX = \dfrac{1}{2}AH$. Vì $K$ đối xứng với $O$ qua $BC$ nên $OK = 2OX = AH$. Lại có $AH \parallel OK$ do cùng vuông góc với $BC$, nên $AHKO$ là hình bình hành.
+
+Suy ra $KH = OA = OB = OC$. Vì $X$ là trung điểm của $BC$ và $OK$ nên $OBKC$ là hình bình hành. Mà $OK \perp BC$ nên $OBKC$ là hình thoi. Cho ta $KB = KC = OC = KH$. Vậy $K$ là tâm của đường tròn $(BHC)$.
+
+**Nhận xét 2:** $A$, $Eu$, $K$ thẳng hàng.
+
+Gọi $I$ là trung điểm của $AH$. Ta có 5 điểm $D$, $F$, $I$, $E$, $X$ cùng thuộc 1 đường tròn (<strong style="color:var(--danger)">đường tròn Euler</strong>) có đường kính là $IX$ và tâm là $Eu$. Vì $OX = \dfrac{1}{2}AH = IH$, kết hợp $OX \parallel IH$ nên $OIHX$ là hình bình hành. Mà $Eu$ là trung điểm của $IX$ nên $Eu$ là trung điểm của $OH$. Lại có $AHKO$ là hình bình hành, có $Eu$ là trung điểm của $OH$ nên $Eu$ cũng là trung điểm của $AK$. Tức là $A$, $Eu$, $K$ thẳng hàng.
+
+**Nhận xét 3:** $MN \perp KEu$.
+
+Vì $\widehat{BFH} = \widehat{BDH} = 90^\circ$ (hoặc $\widehat{BFH} + \widehat{BDH} = 180^\circ$) nên tứ giác $BFHD$ nội tiếp. Suy ra:
+$$\overline{MH} \cdot \overline{MB} = \overline{MF} \cdot \overline{MD}$$
+Hay phương tích từ $M$ đến hai đường tròn $(K)$ và $(Eu)$:
+$$\mathscr{P}_{M/(K)} = \mathscr{P}_{M/(Eu)}$$
+Nên $M$ thuộc trục đẳng phương của $(K)$ và $(Eu)$.
+
+Ta có $\widehat{CEH} + \widehat{CDH} = 180^\circ$ nên tứ giác $CEHD$ nội tiếp. Suy ra:
+$$\overline{NE} \cdot \overline{ND} = \overline{NH} \cdot \overline{NC}$$
+Hay phương tích từ $N$ đến hai đường tròn $(K)$ và $(Eu)$:
+$$\mathscr{P}_{N/(K)} = \mathscr{P}_{N/(Eu)}$$
+Nên $N$ thuộc trục đẳng phương của $(K)$ và $(Eu)$.
+
+Từ đó suy ra $MN$ là trục đẳng phương của $(K)$ và $(Eu)$. Do đó $MN \perp KEu$.
+
+Kết hợp $A$, $Eu$, $K$ thẳng hàng, ta có $MN \perp AK$. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ và $P$, $Q$ lần lượt là các điểm trên cạnh $AB$, $AC$ sao cho $AP=AQ$. Trên đoạn $BC$ lấy hai điểm $S$, $R$ phân biệt sao cho $S$ nằm giữa $B$, $R$ và $\widehat{BPS}=\widehat{PRS}$, $\widehat{CQR}=\widehat{QSR}$. Chứng minh rằng $P$, $Q$, $R$, $S$ cùng thuộc một đường tròn.`,
@@ -1443,8 +1550,78 @@ window.DATA_DIEMDANH.push({
         {stt:52, ho:"Võ Thế", ten:"Vượng", lop:"10 Toán", comat:true},
         {stt:53, ho:"Hoàng Trọng", ten:"Phú", lop:"10 Toán", comat:true},
         {stt:54, ho:"Nguyễn Ngọc Gia", ten:"Bảo", lop:"10TN1", comat:true},
+        {stt:55, ho:"Đậu Nguyễn Mai", ten:"Anh", lop:"10 Toán", comat:true},
+        {stt:56, ho:"Nguyễn Thành", ten:"Đạt", lop:"10 Tin", comat:false},
+        {stt:57, ho:"Diệp Khả", ten:"Tú", lop:"10 Toán", comat:false},
+        {stt:58, ho:"Lê Ngọc Gia", ten:"Tuệ", lop:"10 Toán", comat:false},
       ]
 });
+window.DATA_DIEMDANH.push({
+  id: "2026-09-29",
+  ngay: "29/09/2026",
+  ghiChu: "Buổi học đội tuyển Toán 10",
+  danhSach: [
+        {stt:1, ho:"Nguyễn Minh", ten:"Huy", lop:"10T", comat:false},
+        {stt:2, ho:"Nguyễn Đỗ Tuấn", ten:"Minh", lop:"10TN8", comat:false},
+        {stt:3, ho:"Nguyễn Thành Đạt", ten:"Henri", lop:"10 Tin", comat:false},
+        {stt:4, ho:"Huỳnh Châu Thanh", ten:"Vy", lop:"10TN1", comat:true},
+        {stt:5, ho:"Nguyễn Quốc", ten:"Kiệt", lop:"10 Toán", comat:true},
+        {stt:6, ho:"Bùi Minh", ten:"Huy", lop:"10 Toán", comat:true},
+        {stt:7, ho:"Lê Lý Thanh", ten:"Bình", lop:"10 Tin", comat:true},
+        {stt:8, ho:"Nguyễn Minh", ten:"Toàn", lop:"10TN2", comat:true},
+        {stt:9, ho:"Trịnh Nam", ten:"Anh", lop:"10 Toán", comat:true},
+        {stt:10, ho:"Nguyễn Bình", ten:"Minh", lop:"10 Toán", comat:true},
+        {stt:11, ho:"Nghiêm Thanh", ten:"Sơn", lop:"10TN6", comat:true},
+        {stt:12, ho:"Nguyễn Hoàng", ten:"Thiên", lop:"10TN4", comat:true},
+        {stt:13, ho:"Trần Nhật Anh", ten:"Khôi", lop:"10 Toán", comat:true},
+        {stt:14, ho:"Tất Triệu", ten:"Quân", lop:"10 Toán", comat:true},
+        {stt:15, ho:"Nguyễn Minh", ten:"Tài", lop:"10 Toán", comat:true},
+        {stt:16, ho:"Ngô Bảo", ten:"An", lop:"10 Toán", comat:true},
+        {stt:17, ho:"Nguyễn Đắc Minh", ten:"Tú", lop:"10 Toán", comat:true},
+        {stt:18, ho:"Bùi Thiện", ten:"Bảo", lop:"10TN8", comat:false},
+        {stt:19, ho:"Phan Hà Bảo", ten:"Ngọc", lop:"10TN1", comat:true},
+        {stt:20, ho:"Nguyễn Minh", ten:"Thư", lop:"10 Toán", comat:true},
+        {stt:21, ho:"Nguyễn Gia", ten:"Trọng", lop:"10 Toán", comat:true},
+        {stt:22, ho:"Lê Hoàng", ten:"Nam", lop:"10 Toán", comat:true},
+        {stt:23, ho:"Nguyễn Tú", ten:"Quỳnh", lop:"10 Văn", comat:true},
+        {stt:24, ho:"Phan Kim", ten:"Ngân", lop:"10 Toán", comat:true},
+        {stt:25, ho:"Nguyễn Trang Hà", ten:"My", lop:"10 Toán", comat:true},
+        {stt:26, ho:"Trịnh Anh", ten:"Quân", lop:"10 toán", comat:true},
+        {stt:27, ho:"Đào Lê Quang", ten:"Tùng", lop:"10 Toán", comat:true},
+        {stt:28, ho:"Trần Nhân", ten:"Kiệt", lop:"10TN4", comat:true},
+        {stt:29, ho:"Đặng Minh", ten:"Hùng", lop:"10 Toán", comat:true},
+        {stt:30, ho:"Nguyễn Minh", ten:"Tâm", lop:"10 Toán", comat:true},
+        {stt:31, ho:"Doãn Minh", ten:"Khôi", lop:"10TN6", comat:true},
+        {stt:32, ho:"Nguyễn Ngọc Thu", ten:"Hà", lop:"10TN7", comat:true},
+        {stt:33, ho:"Trương Khánh", ten:"Toàn", lop:"10 Toán", comat:true},
+        {stt:34, ho:"Nguyễn Bảo", ten:"Ngọc", lop:"10 Tin", comat:true},
+        {stt:35, ho:"Đặng Đức", ten:"Huy", lop:"10 Toán", comat:true},
+        {stt:36, ho:"Trần Hoàng Phi", ten:"Long", lop:"10 Toán", comat:true},
+        {stt:37, ho:"Trần Hồng", ten:"Yến", lop:"10 Tin", comat:false},
+        {stt:38, ho:"Phạm Nhã", ten:"Nghi", lop:"10 Toán", comat:true},
+        {stt:39, ho:"Bùi Quang Tuấn", ten:"Dũng", lop:"10TN7", comat:true},
+        {stt:40, ho:"Dương Kiến", ten:"Tường", lop:"10 Toán", comat:true},
+        {stt:41, ho:"Nguyễn Thành", ten:"Nam", lop:"10 Toán", comat:true},
+        {stt:42, ho:"Huỳnh Chí", ten:"Thiện", lop:"10 Toán", comat:true},
+        {stt:43, ho:"Trần Đức", ten:"Anh", lop:"10 Tin", comat:true},
+        {stt:44, ho:"Bùi Mai", ten:"Phương", lop:"10TN6", comat:true},
+        {stt:45, ho:"Nguyễn Ngọc Lan", ten:"Chi", lop:"10 Toán", comat:true},
+        {stt:46, ho:"Kiều Hoàng Minh", ten:"Anh", lop:"10TN1", comat:true},
+        {stt:47, ho:"Trần Đông", ten:"Quân", lop:"10 Toán", comat:true},
+        {stt:48, ho:"Nguyễn Thành", ten:"Phát", lop:"10TN5", comat:true},
+        {stt:49, ho:"Đỗ Thiên", ten:"Ân", lop:"10TN5", comat:true},
+        {stt:50, ho:"Nguyễn Cát", ten:"Tường", lop:"10 Lí", comat:false},
+        {stt:51, ho:"Nguyễn Triệu", ten:"Quang", lop:"10TN3", comat:false},
+        {stt:52, ho:"Võ Thế", ten:"Vượng", lop:"10 Toán", comat:true},
+        {stt:53, ho:"Hoàng Trọng", ten:"Phú", lop:"10 Toán", comat:true},
+        {stt:54, ho:"Nguyễn Ngọc Gia", ten:"Bảo", lop:"10TN1", comat:true},
+        {stt:55, ho:"Đậu Nguyễn Mai", ten:"Anh", lop:"10 Toán", comat:true},
+        {stt:56, ho:"Nguyễn Thành", ten:"Đạt", lop:"10 Tin", comat:true},
+        {stt:57, ho:"Diệp Khả", ten:"Tú", lop:"10 Toán", comat:true},
+        {stt:58, ho:"Lê Ngọc Gia", ten:"Tuệ", lop:"10 Toán", comat:false},
+      ]
+});
+
 /* Để thêm buổi điểm danh mới, chỉ cần push thêm một object tương tự
    (đổi id/ngay/ghiChu, giữ nguyên STT của học sinh) — sẽ tự hiện thành
    tab ngày mới trong mục Điểm danh. */
@@ -1690,7 +1867,7 @@ function renderContent(){
       ${bai.baiTaps.length ? `
         <div class="sub-tabs">
           ${bai.baiTaps.map((bt,i)=>`
-            <button type="button" class="sub-tab ${i===state.currentBaitap?"active":""}" data-baitap="${i}">
+            <button type="button" class="sub-tab ${i===state.currentBaitap?"active":""} ${bt.dapAn ? "has-answer":""}" data-baitap="${i}">
               Bài ${i+1}
             </button>
           `).join("")}
