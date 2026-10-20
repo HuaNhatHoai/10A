@@ -1504,7 +1504,40 @@ Chứng minh tương tự ta cũng suy ra được $OS=OR=k$. Vậy $O$ là tâm
 (a) Các cạnh $BC=a$, $CA=b$, $AB=c$.
 (b) Các góc $A$, $B$, $C$.`,
           doKho: "vua",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt1-oh-distance" data-img-src="BT1.png"></div>
+
+**a)** Gọi $G$ là trọng tâm tam giác $ABC$. Do $O$ là tâm đường tròn ngoại tiếp nên $\overrightarrow{OH}=3\overrightarrow{OG}$, tức là
+$$\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}=3\overrightarrow{OG}=\overrightarrow{OH}.$$
+
+Bình phương vô hướng hai vế, ta được
+$$\begin{aligned}OH^2&=OA^2+OB^2+OC^2+2\left(\overrightarrow{OA}\cdot\overrightarrow{OB}+\overrightarrow{OB}\cdot\overrightarrow{OC}+\overrightarrow{OC}\cdot\overrightarrow{OA}\right)\\&=3\left(OA^2+OB^2+OC^2\right)-\left(AB^2+BC^2+CA^2\right)\\&=9R^2-\left(a^2+b^2+c^2\right).\end{aligned}$$
+
+(ở bước thứ hai ta dùng $2\overrightarrow{OA}\cdot\overrightarrow{OB}=OA^2+OB^2-AB^2$ và các đẳng thức tương tự). Vậy
+$$OH^2=9R^2-\left(a^2+b^2+c^2\right).$$
+
+**b)** Giả sử tam giác $ABC$ nhọn. Tia $AH$ cắt $BC$ tại $D$ và cắt đường tròn $(O)$ tại điểm thứ hai $E$.
+
+Xét tam giác $ABH$. Ta có $\widehat{ABH}=90^\circ-A$ và $\widehat{AHB}=180^\circ-C$. Theo định lí hàm sin,
+$$\dfrac{HA}{\sin\widehat{ABH}}=\dfrac{AB}{\sin\widehat{AHB}}$$
+nên
+$$HA=\dfrac{AB\cdot\cos A}{\sin C}=2R\cos A.$$
+
+Tương tự, $HB=2R\cos B$.
+
+Do $E$ đối xứng với $H$ qua $BC$ nên tam giác $BHE$ cân tại $B$ và $D$ là trung điểm của $HE$. Vì $\widehat{BHD}=C$ nên
+$$HE=2HD=2HB\cdot\cos\widehat{BHD}=2HB\cdot\cos C=4R\cos B\cos C.$$
+
+Suy ra phương tích của $H$ đối với $(O)$ là
+$$\mathscr{P}_{H/(O)}=-HA\cdot HE=-8R^2\cos A\cos B\cos C.$$
+
+Mặt khác $\mathscr{P}_{H/(O)}=OH^2-R^2$, do đó
+$$OH^2=R^2-8R^2\cos A\cos B\cos C.$$
+
+Trường hợp tam giác vuông: $\cos A\cos B\cos C=0$ nên $OH=R$ (thỏa mãn công thức trên).
+
+Trường hợp tam giác tù: chứng minh tương tự ta cũng thu được hệ thức trên. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ và điểm $P$ thỏa mãn
@@ -1547,25 +1580,71 @@ $$\mathscr{P}_{P/(O)} = OP^2 - R^2 = - \frac{\alpha\beta c^2 + \alpha\gamma b^2 
         {
           de: String.raw`Cho tam giác $ABC$ cân tại $A$ có $\widehat{BAC}=20^{\circ}$. $D$ là điểm trên cạnh $BC$ sao cho $DC=2BD$. Gọi $E$ là hình chiếu vuông góc của $C$ lên $AD$. Tính số đo góc $\widehat{AEB}$.`,
           doKho: "vua",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt3-angle-aeb" data-img-src="BT3.png"></div>
+
+Gọi $F$ là trung điểm của $BC$. Vì tam giác $ABC$ cân tại $A$ nên $AF\perp BC$, do đó $\widehat{AFC}=90^\circ=\widehat{AEC}$ và bốn điểm $A,E,F,C$ cùng thuộc đường tròn đường kính $AC$.
+
+Do $DC=2BD$ nên $BC=3DB$, suy ra $BF=\dfrac{3DB}{2}$ và $DF=BF-DB=\dfrac{DB}{2}$.
+
+Khi đó, tính phương tích của $D$ lần lượt đối với đường tròn $(AEB)$ và $(AEFC)$:
+$$\mathscr{P}_{D/(AEB)}=DE\cdot DA=\mathscr{P}_{D/(AEFC)}=DF\cdot DC=\dfrac{DB}{2}\cdot 2DB=DB^2.$$
+
+Từ $DB^2=DE\cdot DA$ suy ra $DB$ là tiếp tuyến của đường tròn $(AEB)$, và $\triangle DEB\sim\triangle DBA$ (c.g.c). Do đó
+$$\widehat{DEB}=\widehat{DBA}=\widehat{ABC}=\dfrac{180^\circ-20^\circ}{2}=80^\circ.$$
+
+Vậy
+$$\widehat{AEB}=180^\circ-\widehat{DEB}=100^\circ.$$ $\square$`
         },
         {
           de: String.raw`Cho $C$ thuộc nửa đường tròn đường kính $AB$. Gọi $D$ là điểm giữa của cung $AC$ và $E$ là hình chiếu vuông góc của $D$ lên $BC$. Gọi $F$ là giao điểm của $AE$ và nửa đường tròn. Chứng minh rằng $BF$ là đường trung tuyến của tam giác $BED$.`,
           doKho: "vua",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt4-median" data-img-src="BT4.png"></div>
+
+Gọi $G$ là giao điểm của $BF$ và $DE$. Ta sẽ chứng minh $G$ là trung điểm của $DE$.
+
+Vì $D$ là điểm giữa của cung $AC$ nên tiếp tuyến của nửa đường tròn tại $D$ song song với $AC$. Mặt khác $AC\perp BC$ (góc nội tiếp chắn đường kính) và $DE\perp BC$ nên $DE\parallel AC$. Do đó $DE$ là tiếp tuyến của đường tròn tại $D$, và vì $G\in DE$ nên
+$$\mathscr{P}_{G/(ABC)}=GD^2.$$
+
+Vì $F$ thuộc đường tròn đường kính $AB$ nên $\widehat{AFB}=90^\circ$, tức là $EF\perp BG$. Tam giác $EBG$ vuông tại $E$ (do $DE\perp BC$) và có đường cao $EF$ nên
+$$GE^2=GF\cdot GB=\mathscr{P}_{G/(ABC)}=GD^2.$$
+
+Vậy $GE=GD$, tức $G$ là trung điểm của $DE$. Do đó $BF$ đi qua trung điểm $G$ của $DE$, hay $BF$ là đường trung tuyến của tam giác $BED$. $\square$`
         },
         {
           de: String.raw`Cho tứ giác $ABCD$ nội tiếp với $ABC$ là tam giác nhọn. Trên $AB$, $BC$ lần lượt lấy $E$, $F$ sao cho $EBFD$ là hình bình hành. Chứng minh rằng
 $$BF\cdot BC+BE\cdot BA=BD^2.$$`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt5-parallelogram" data-img-src="BT5.png"></div>
+
+Gọi $G$ là giao điểm thứ hai của đường tròn ngoại tiếp tam giác $DFC$ với $BD$. Tính phương tích của $B$ đối với đường tròn $(DFC)$:
+$$BF\cdot BC=BG\cdot BD=\mathscr{P}_{B/(DFC)}.$$
+
+Ta chứng minh $\triangle FGD\sim\triangle DAB$.
+
+Vì $EBFD$ là hình bình hành nên $FD\parallel AB$ và $FD=BE$. Do đó $\widehat{FDG}=\widehat{FDB}=\widehat{DBA}$ (so le trong).
+
+Vì $F,G,D,C$ cùng thuộc một đường tròn nên $\widehat{BGF}=\widehat{BCD}$. Lại có tứ giác $ABCD$ nội tiếp nên $\widehat{BCD}=180^\circ-\widehat{BAD}$. Suy ra
+$$\widehat{FGD}=180^\circ-\widehat{BGF}=180^\circ-\widehat{BCD}=\widehat{BAD}.$$
+
+Vậy $\triangle FGD\sim\triangle DAB$ (g.g), suy ra
+$$\dfrac{GD}{AB}=\dfrac{FD}{DB}=\dfrac{BE}{DB}$$
+nên $BE\cdot BA=GD\cdot DB$.
+
+Cộng hai kết quả (với $G$ nằm trên đoạn $BD$), ta được
+$$BF\cdot BC+BE\cdot BA=BG\cdot BD+GD\cdot BD=BD\cdot(BG+GD)=BD^2.$$ $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ có $AD$ là đường phân giác trong, $D$ thuộc $BC$. Đường tròn qua $A$ tiếp xúc với $BC$ tại $D$ cắt $AC$ tại $M$. Gọi $P$ là giao điểm thứ hai của $BM$ và đường tròn. Tia $AP$ cắt $BC$ tại $J$. Chứng minh rằng $J$ là trung điểm của $BD$.`,
           doKho: "kho",
           dapAn: String.raw`**Lời giải.**
 
-<div class="img-placeholder" data-img-slot="bt6-angle-bisector"></div>
+<div class="img-placeholder" data-img-slot="bt6-angle-bisector" data-img-src="BT6.png"></div>
 
 Ta có
 $$\begin{align*}\widehat{CBM}&=\widehat{CDM}-\widehat{DMP}=\widehat{MAD}-\widehat{PAD}\\&=\widehat{BAD}-\widehat{PAD}=\widehat{BAP}.\end{align*}$$
@@ -1576,14 +1655,32 @@ Vậy $JB=JD$. $\square$`
         {
           de: String.raw`Gọi $M$ là giao điểm của hai đường chéo $AC$, $BD$ của tứ giác lồi $ABCD$. Đường phân giác của góc $\widehat{ACD}$ cắt tia $BA$ tại $K$. Giả sử $MA\cdot MC+MA\cdot CD=MB\cdot MD$. Chứng minh rằng tứ giác $BCDK$ nội tiếp.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt7-cyclic-bcdk" data-img-src="BT7.png"></div>
+
+Gọi $N$ là giao điểm của $BD$ và $CK$. Do $CN$ là tia phân giác của góc $\widehat{MCD}$ trong tam giác $CMD$ nên
+$$\dfrac{CM}{CD}=\dfrac{NM}{ND}\quad\text{hay}\quad CD=\dfrac{CM\cdot ND}{NM}.$$
+
+Thay vào giả thiết, ta được
+$$MB\cdot MD=MA\cdot MC+MA\cdot\dfrac{CM\cdot ND}{NM}=MA\cdot MC\cdot\dfrac{NM+ND}{NM}=MA\cdot MC\cdot\dfrac{MD}{MN}.$$
+
+Suy ra
+$$MB\cdot MN=MA\cdot MC.$$
+
+Vì $M$ nằm giữa $A,C$ và nằm giữa $B,N$ (tức $M$ nằm bên trong tứ giác $ABCN$) nên theo định lí đảo về phương tích, $ABCN$ là tứ giác nội tiếp.
+
+Do đó
+$$\widehat{ABD}=\widehat{ABN}=\widehat{ACN}=\widehat{ACK}=\widehat{DCK}.$$
+
+Vì $K$ thuộc tia $BA$ nên $\widehat{KBD}=\widehat{ABD}$, suy ra $\widehat{KBD}=\widehat{KCD}$. Hai điểm $B,C$ cùng nhìn đoạn $KD$ dưới các góc bằng nhau nên tứ giác $KBCD$ nội tiếp. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ nội tiếp đường tròn $(O)$ có ba đường cao $AD$, $BE$, $CF$ và $G$ là trọng tâm. Tia $AG$, $GD$ cắt đường tròn tại điểm thứ hai lần lượt là $M$, $N$. Chứng minh rằng $M$, $N$, $E$, $F$ cùng thuộc một đường tròn.`,
           doKho: "kho",
           dapAn: String.raw`**Lời giải.**
 
-<div class="img-placeholder" data-img-slot="bt8-orthic-centroid"></div>
+<div class="img-placeholder" data-img-slot="bt8-orthic-centroid" data-img-src="BT8.png"></div>
 
 Đường thẳng qua $A$ vuông góc với $AD$ cắt đường tròn tại điểm thứ hai là $K$. Gọi $H$ là hình chiếu của $K$ lên $BC$. Khi đó $P$ là trung điểm $DH$. Gọi $G'=DK\cap AP$ thì $\dfrac{G'A}{G'P}=\dfrac{DP}{AK}=\dfrac{1}{2}$ nên $G'\equiv G$.
 
@@ -1600,24 +1697,88 @@ Từ đó suy ra tứ giác $M'NDP$ nội tiếp. Khi đó đường tròn tâm 
         {
           de: String.raw`Cho hai điểm $A$, $B$ cố định, $C$ là điểm bất kì trên nửa mặt phẳng có bờ là đường thẳng $AB$. Dựng về phía ngoài của tam giác $ABC$ các tam giác đều $ADC$, $BCE$. Gọi $P$ là giao điểm thứ hai của $(ADC)$ và $(BCE)$. Chứng minh rằng $CP$ luôn đi qua một điểm cố định.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt9-fixed-point" data-img-src="BT9.png"></div>
+
+Dựng tam giác đều $ABQ$ về phía ngoài của tam giác $ABC$ (về phía nửa mặt phẳng bờ $AB$ không chứa $C$). Vì $A,B$ cố định nên $Q$ cố định. Ta sẽ chứng minh $CP$ đi qua $Q$.
+
+Gọi $M$ là giao điểm thứ hai của $QA$ với $(ADC)$ và $N$ là giao điểm thứ hai của $QB$ với $(BCE)$.
+
+Do $ADC$ là tam giác đều nên ta có
+$$\widehat{AMC}=\widehat{ADC}=60^\circ=\widehat{QAB}.$$
+Hai góc $\widehat{AMC}$ và $\widehat{QAB}$ ở vị trí so le trong nên $MC\parallel AB$.
+
+Chứng minh tương tự, $\widehat{BNC}=\widehat{BEC}=60^\circ=\widehat{QBA}$ nên $NC\parallel AB$.
+
+Khi đó $M,C,N$ cùng nằm trên đường thẳng qua $C$ song song với $AB$, tức là thẳng hàng. Hơn nữa $MN\parallel AB$ nên
+$$\widehat{QMN}=\widehat{QAB}=60^\circ,\qquad \widehat{QNM}=\widehat{QBA}=60^\circ$$
+suy ra $QMN$ là tam giác đều, đồng dạng với $QAB$. Vì $QA=QB$ nên $QM=QN$, và do đó
+$$QA\cdot QM=QB\cdot QN.$$
+
+Vế trái là phương tích của $Q$ đối với $(ADC)$, vế phải là phương tích của $Q$ đối với $(BCE)$:
+$$\mathscr{P}_{Q/(ADC)}=QA\cdot QM=QB\cdot QN=\mathscr{P}_{Q/(BCE)}.$$
+
+Vậy $Q$ nằm trên trục đẳng phương của $(ADC)$ và $(BCE)$. Hai đường tròn này cắt nhau tại $C,P$ nên trục đẳng phương chính là đường thẳng $CP$.
+
+Do đó $CP$ luôn đi qua điểm cố định $Q$. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ cân tại $B$ nội tiếp trong đường tròn đường kính $BD$. Trên tia $CA$ lấy điểm $E$ và các điểm $F$, $G$ lần lượt thuộc tia $CB$, $BA$ sao cho $EG$ song song với $BC$ và $EF$ song song với $AB$. Chứng minh rằng $DE$ vuông góc với $FG$.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt10-perpendicular" data-img-src="BT10.png"></div>
+
+Gọi $(O_1)$ là đường tròn ngoại tiếp tam giác $ABC$ (tâm $O_1$ là trung điểm của $BD$). Tiếp tuyến của $(O_1)$ tại $B$ cắt $EF$ tại $K$ và cắt $EG$ tại $L$.
+
+Vì $EF\parallel AB$ nên theo góc tạo bởi tiếp tuyến và dây cung, $\widehat{BKF}=\widehat{BCA}=\widehat{BCE}$, suy ra $B,C,E,K$ cùng thuộc một đường tròn. Tương tự, vì $EG\parallel BC$ nên $\widehat{BLG}=\widehat{BAC}=\widehat{BAE}$, suy ra $A,B,E,L$ cùng thuộc một đường tròn. Do đó
+$$FB\cdot FC=FK\cdot FE\quad\text{và}\quad GA\cdot GB=GE\cdot GL.$$
+
+Hai đẳng thức trên cho biết $F,G$ có cùng phương tích đối với $(ABC)$ và đối với đường tròn $(KLE)$ (kí hiệu tâm là $O_2$):
+$$\mathscr{P}_{F/(ABC)}=\mathscr{P}_{F/(KLE)},\qquad \mathscr{P}_{G/(ABC)}=\mathscr{P}_{G/(KLE)}.$$
+Vậy $FG$ là trục đẳng phương của hai đường tròn $(ABC)$ và $(KLE)$, nên $FG\perp O_1O_2$.
+
+Ta chứng minh $O_1O_2ED$ là hình bình hành. Vì $BA=BC$ nên $BD\perp AC$, do đó tiếp tuyến tại $B$ song song với $AC$, tức $KL\parallel AC$. Kết hợp $EK\parallel BA$, $EL\parallel BC$, hai tam giác $EKL$ và $BAC$ có các cạnh tương ứng song song. Khoảng cách từ $E$ đến $KL$ bằng khoảng cách giữa hai đường thẳng song song $AC$ và $KL$, bằng đường cao hạ từ $B$ của tam giác $ABC$. Hai tam giác đồng dạng có đường cao tương ứng bằng nhau nên bằng nhau, và vì $E,B$ nằm về hai phía của cặp đường thẳng song song nên tam giác $EKL$ là ảnh của tam giác $BAC$ qua một phép đối xứng tâm.
+
+Phép đối xứng tâm này biến $B\mapsto E$ và $O_1\mapsto O_2$, nên $\overrightarrow{O_2E}=-\overrightarrow{O_1B}=\overrightarrow{O_1D}$ (do $O_1$ là trung điểm của $BD$). Suy ra $O_1O_2ED$ là hình bình hành, và do đó $DE\parallel O_1O_2$.
+
+Mà $FG\perp O_1O_2$ nên $DE\perp FG$. $\square$`
         },
         {
           de: String.raw`Cho hai đường tròn $(O_1)$, $(O_2)$ cắt nhau tại $A$, $B$. Chứng minh rằng với $k$ là hằng số thì quỹ tích của điểm $M$ thỏa mãn $|\mathscr{P}_{M/(O_1)}|=k|\mathscr{P}_{M/(O_2)}|$ là đường tròn đi qua $A$, $B$.`,
           doKho: "vua",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt11-locus" data-img-src="BT11.png"></div>
+
+Xét các điểm $M$ có $\dfrac{\mathscr{P}_{M/(O_1)}}{\mathscr{P}_{M/(O_2)}}=\varepsilon k$ với $\varepsilon\in\{1,-1\}$ cố định (xem chú ý ở cuối). Gọi $I,K$ (khác $A,B$) là hai điểm bất kì thỏa mãn
+$$\left|\dfrac{\mathscr{P}_{I/(O_1)}}{\mathscr{P}_{I/(O_2)}}\right|=\left|\dfrac{\mathscr{P}_{K/(O_1)}}{\mathscr{P}_{K/(O_2)}}\right|=k.$$
+Ta chứng minh $ABIK$ là tứ giác nội tiếp.
+
+Gọi giao điểm thứ hai của $AI$ với $(O_1),(O_2)$ lần lượt là $D,C$, và giao điểm thứ hai của $BK$ với $(O_1),(O_2)$ lần lượt là $F,E$. Ta có
+$$\dfrac{ID}{IC}=\dfrac{IA\cdot ID}{IA\cdot IC}=\left|\dfrac{\mathscr{P}_{I/(O_1)}}{\mathscr{P}_{I/(O_2)}}\right|=k,\qquad \dfrac{KF}{KE}=\dfrac{KB\cdot KF}{KB\cdot KE}=\left|\dfrac{\mathscr{P}_{K/(O_1)}}{\mathscr{P}_{K/(O_2)}}\right|=k.$$
+Do đó
+$$\dfrac{IA\cdot ID}{IA\cdot IC}=\dfrac{KB\cdot KF}{KB\cdot KE}\quad\text{tức là}\quad \dfrac{ID}{IC}=\dfrac{KF}{KE}.$$
+
+Vì $D,F$ cùng thuộc $(O_1)$ nên các góc $\widehat{BDA}$ và $\widehat{BFA}$ cùng chắn dây $AB$; tương tự $\widehat{BCA}$ và $\widehat{BEA}$ cùng chắn dây $AB$ của $(O_2)$. Do đó tam giác $BDC$ đồng dạng với tam giác $AFE$ (theo thứ tự $B\to A$, $D\to F$, $C\to E$; hai tam giác này ngược hướng nhau).
+
+Phép đồng dạng này biến đường thẳng $DC$ thành đường thẳng $FE$ và giữ nguyên tỉ số chia, mà $\dfrac{ID}{IC}=\dfrac{KF}{KE}$ nên nó biến $I$ thành $K$. Vậy phép đồng dạng biến $B,D,I$ lần lượt thành $A,F,K$, suy ra $\widehat{BID}=\widehat{AKF}$ (về độ lớn góc, hai góc ngược hướng). Vì $I\in AD$ và $K\in BF$ nên đây chính là
+$$\widehat{BIA}=\widehat{AKB}$$
+(theo góc định hướng giữa các đường thẳng), tức bốn điểm $A,B,I,K$ cùng thuộc một đường tròn.
+
+Như vậy mọi điểm của quỹ tích đều nằm trên đường tròn đi qua $A,B$ và một điểm $I$ cho trước.
+
+**Điều ngược lại.** Đặt $f(M)=\mathscr{P}_{M/(O_1)}-\lambda\,\mathscr{P}_{M/(O_2)}$ với $\lambda=\varepsilon k$. Khai triển $\mathscr{P}_{M/(O_i)}=OM^2-\dots$ cho thấy $f(M)=0$ có dạng $(1-\lambda)\,|\overrightarrow{OM}|^2+(\text{bậc nhất theo }M)+\text{hằng số}=0$, là phương trình của một đường tròn (hoặc đường thẳng $AB$ nếu $\lambda=1$). Vì $f(A)=f(B)=0$ nên đường này đi qua $A,B$. Vậy mọi điểm của đường tròn đó đều thuộc quỹ tích.
+
+**Chú ý.** Do có dấu giá trị tuyệt đối nên điều kiện $|\mathscr{P}_{M/(O_1)}|=k\,|\mathscr{P}_{M/(O_2)}|$ gồm hai trường hợp $\mathscr{P}_{M/(O_1)}=\pm k\,\mathscr{P}_{M/(O_2)}$; mỗi trường hợp cho một đường tròn đi qua $A,B$. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ nội tiếp đường tròn tâm $O$ có $H$ là trực tâm, các đường cao $BE$, $CF$, $AD$. $FD$ cắt $BE$ tại $M$, $FC$ cắt $DE$ tại $N$. Cho $K$ là điểm đối xứng của $O$ qua $BC$. Chứng minh rằng $MN$ vuông góc với $AK$.`,
           doKho: "kho",
           dapAn: String.raw`**Lời giải 1.**
 
-<div class="img-placeholder" data-img-slot="bt12-euler"></div>
+<div class="img-placeholder" data-img-slot="bt12-euler" data-img-src="BT12.png"></div>
 
 Do $K$ đối xứng với $O$ qua $BC$ nên $OK=AH$ và $K$ cũng là tâm của đường tròn ngoại tiếp tam giác $HBC$. Gọi $L$ là giao điểm của $OH$ và $AK$. Khi đó $L$ là trung điểm của $OH$ nên cũng là tâm của đường tròn ngoại tiếp tam giác $DEF$ (<strong style="color:var(--danger)">đường tròn Euler</strong> của tam giác $ABC$). Ta có
 $$\mathscr{P}_{M/(K)}=\overline{MH}\cdot \overline{MB}=\overline{MD}\cdot \overline{MF}= \mathscr{P}_{M/(L)}$$
@@ -1658,32 +1819,176 @@ Kết hợp $A$, $Eu$, $K$ thẳng hàng, ta có $MN \perp AK$. $\square$`
         {
           de: String.raw`Cho tam giác $ABC$ và $P$, $Q$ lần lượt là các điểm trên cạnh $AB$, $AC$ sao cho $AP=AQ$. Trên đoạn $BC$ lấy hai điểm $S$, $R$ phân biệt sao cho $S$ nằm giữa $B$, $R$ và $\widehat{BPS}=\widehat{PRS}$, $\widehat{CQR}=\widehat{QSR}$. Chứng minh rằng $P$, $Q$, $R$, $S$ cùng thuộc một đường tròn.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt13-concyclic" data-img-src="BT13.png"></div>
+
+Vì $S$ nằm giữa $B$ và $R$ nên $\widehat{PRS}=\widehat{BRP}$. Kết hợp giả thiết $\widehat{BPS}=\widehat{PRS}$ ta có $\widehat{BPS}=\widehat{BRP}$. Hai tam giác $BPS$ và $BRP$ có chung góc $B$ nên
+$$\triangle BPS\sim\triangle BRP\ (\text{g.g}),$$
+suy ra
+$$BS\cdot BR=BP^2.$$
+
+Từ đó $BP$ là tiếp tuyến của đường tròn $(PSR)$ tại $P$ (vì $BP^2$ bằng phương tích của $B$ đối với $(PSR)$). Do $P\in AB$ nên $AP$ tiếp xúc với $(SPR)$ tại $P$.
+
+Chứng minh tương tự: từ $\widehat{CQR}=\widehat{QSR}$ ta có $\triangle CQR\sim\triangle CSQ$, suy ra $CR\cdot CS=CQ^2$, nên $AQ$ tiếp xúc với $(SQR)$ tại $Q$.
+
+Do đó
+$$\mathscr{P}_{A/(SPR)}=AP^2,\qquad \mathscr{P}_{A/(SQR)}=AQ^2.$$
+
+Giả sử hai đường tròn $(SPR)$ và $(SQR)$ không trùng nhau. Vì $AP=AQ$ nên $\mathscr{P}_{A/(SPR)}=\mathscr{P}_{A/(SQR)}$, tức $A$ thuộc trục đẳng phương của hai đường tròn này. Hai đường tròn có hai điểm chung $S,R$ nên trục đẳng phương là đường thẳng $SR$, tức đường thẳng $BC$. Suy ra $A\in BC$, vô lí.
+
+Vậy $(SPR)$ và $(SQR)$ trùng nhau, tức là bốn điểm $P,Q,R,S$ cùng thuộc một đường tròn. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ có $H$ là trực tâm, $D$, $E$, $F$ lần lượt là trung điểm của $BC$, $CA$, $AB$. Đường tròn tâm $D$ đi qua $H$ cắt $BC$ tại $A_1$, $A_2$. Định nghĩa tương tự cho các điểm $B_1$, $B_2$, $C_1$, $C_2$. Chứng minh rằng các điểm $A_1$, $A_2$, $B_1$, $B_2$, $C_1$, $C_2$ cùng thuộc một đường tròn.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt14-six-points" data-img-src="BT14.png"></div>
+
+Kí hiệu $(D),(E),(F)$ lần lượt là các đường tròn tâm $D,E,F$ đi qua $H$. Gọi $O$ là tâm đường tròn ngoại tiếp tam giác $ABC$.
+
+**Bước 1: $B_1,B_2,C_1,C_2$ cùng thuộc một đường tròn.**
+
+Gọi $X$ là giao điểm thứ hai của $(E)$ và $(F)$. Khi đó $HX$ là trục đẳng phương của $(E)$ và $(F)$, nên $HX\perp EF$. Vì $EF$ là đường trung bình của tam giác $ABC$ nên $EF\parallel BC$, suy ra $HX\perp BC$. Do đó $HX$ chính là đường cao kẻ từ $A$, tức $A,X,H$ thẳng hàng. Vậy $A$ thuộc trục đẳng phương $HX$ của $(E)$ và $(F)$.
+
+Vì $B_1,B_2\in CA$ là giao điểm của $(E)$ với đường thẳng $CA$, và $C_1,C_2\in AB$ là giao điểm của $(F)$ với đường thẳng $AB$ nên
+$$\overline{AB_1}\cdot\overline{AB_2}=\mathscr{P}_{A/(E)}=\mathscr{P}_{A/(F)}=\overline{AC_1}\cdot\overline{AC_2}.$$
+Do đó bốn điểm $B_1,B_2,C_1,C_2$ cùng thuộc một đường tròn.
+
+**Bước 2: tâm của đường tròn này là $O$.**
+
+Vì $E$ là tâm của $(E)$ và $B_1B_2$ là dây cung nằm trên đường thẳng $CA$ đi qua $E$ nên $E$ là trung điểm của $B_1B_2$. Vậy trung trực của $B_1B_2$ là đường thẳng qua $E$ vuông góc với $CA$, chính là trung trực của $CA$, đi qua $O$. Tương tự, trung trực của $C_1C_2$ là trung trực của $AB$, cũng đi qua $O$. Tâm của đường tròn $(B_1B_2C_1C_2)$ là giao điểm của hai đường trung trực này, tức là $O$.
+
+**Bước 3: kết luận.**
+
+Chứng minh tương tự với cặp $(D),(E)$ và đường cao kẻ từ $B$, ta được $A_1,A_2,B_1,B_2$ cùng thuộc một đường tròn tâm $O$.
+
+Hai đường tròn $(B_1B_2C_1C_2)$ và $(A_1A_2B_1B_2)$ cùng có tâm $O$ và cùng đi qua $B_1$ nên trùng nhau. Vậy sáu điểm $A_1,A_2,B_1,B_2,C_1,C_2$ cùng thuộc một đường tròn tâm $O$. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ vuông tại $C$, đường cao $CC_0$. Lấy $X$ trên đoạn $CC_0$, trên đoạn $AX$, $BX$ lần lượt lấy các điểm $K$, $L$ sao cho $BK=BC$ và $AL=AC$. Gọi $M$ là giao điểm của $BK$, $AL$. Chứng minh rằng $MK=ML$.`,
           doKho: "vua",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt15-equal-segments" data-img-src="BT15.png"></div>
+
+Kí hiệu $(A)$ là đường tròn tâm $A$ bán kính $AC$ và $(B)$ là đường tròn tâm $B$ bán kính $BC$. Khi đó $L\in(A)$ (vì $AL=AC$) và $K\in(B)$ (vì $BK=BC$).
+
+Hai đường tròn $(A)$ và $(B)$ cùng đi qua $C$ và điểm đối xứng của $C$ qua $AB$, nên trục đẳng phương của chúng là đường thẳng $CC_0$. Vì $X\in CC_0$ nên
+$$\mathscr{P}_{X/(A)}=\mathscr{P}_{X/(B)}.$$
+
+Gọi $E$ là giao điểm thứ hai của $BX$ và $(A)$, $F$ là giao điểm thứ hai của $AX$ và $(B)$. Khi đó $E,L$ cùng nằm trên đường thẳng $BX$, và $K,F$ cùng nằm trên đường thẳng $AX$, nên
+$$XL\cdot XE=\mathscr{P}_{X/(A)}=\mathscr{P}_{X/(B)}=XK\cdot XF.$$
+Do đó tứ giác $EKLF$ nội tiếp; kí hiệu đường tròn ngoại tiếp là $\omega$.
+
+Vì tam giác $ABC$ vuông tại $C$ nên $AB^2=AC^2+BC^2$. Phương tích của $A$ đối với $(B)$ là $AB^2-BC^2=AC^2$, và $K,F$ cùng thuộc $(B)$ và thẳng hàng với $A$ nên
+$$AL^2=AC^2=\mathscr{P}_{A/(B)}=AK\cdot AF=\mathscr{P}_{A/\omega}.$$
+Vì $L\in\omega$ nên $AL$ là tiếp tuyến của $\omega$ tại $L$.
+
+Chứng minh tương tự, $BK^2=BC^2=\mathscr{P}_{B/(A)}=BL\cdot BE=\mathscr{P}_{B/\omega}$ nên $BK$ là tiếp tuyến của $\omega$ tại $K$.
+
+Điểm $M=BK\cap AL$ là giao của hai tiếp tuyến của $\omega$ tại $K$ và $L$, nên $MK=ML$. $\square$`
         },
         {
           de: String.raw`Cho tam giác nhọn $ABC$ trực tâm $H$, đường cao $CM$, $BN$. Lấy $W$ trên $BC$. Dựng đường tròn ngoại tiếp tam giác $CNW$ đường kính $WX$ và đường tròn ngoại tiếp tam giác $WMB$ đường kính $WY$. Chứng minh rằng $X$, $Y$, $H$ thẳng hàng.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt16-collinear" data-img-src="BT16.png"></div>
+
+Xét đường cao $AL$ của tam giác $ABC$ ($L\in BC$); $H$ nằm trên $AL$. Gọi $Z$ là giao điểm thứ hai của hai đường tròn $(WCN)$ và $(WBM)$.
+
+**Bước 1: $X,Y,Z$ thẳng hàng.** Vì $WX$ và $WY$ là các đường kính nên $\widehat{WZX}=90^\circ$ và $\widehat{WZY}=90^\circ$. Do đó $ZX$ và $ZY$ cùng vuông góc với $ZW$ tại $Z$, nên $X,Y,Z$ thẳng hàng và $XY\perp ZW$ tại $Z$.
+
+**Bước 2: $W,A,Z$ thẳng hàng.** Vì $\widehat{BMC}=\widehat{BNC}=90^\circ$ nên tứ giác $MNCB$ nội tiếp, suy ra $AM\cdot AB=AN\cdot AC$. Mặt khác
+$$\mathscr{P}_{A/(WBM)}=AM\cdot AB=AN\cdot AC=\mathscr{P}_{A/(WCN)}$$
+nên $A$ thuộc trục đẳng phương $WZ$ của hai đường tròn. Vậy $W,A,Z$ thẳng hàng.
+
+**Bước 3: $HZ\perp AW$.** Vì $\widehat{HMB}=\widehat{HLB}=90^\circ$ nên $M,L$ thuộc đường tròn đường kính $BH$, suy ra
+$$AH\cdot AL=AM\cdot AB=AZ\cdot AW,$$
+trong đó đẳng thức cuối là phương tích của $A$ đối với $(WBM)$.
+
+Nếu $W\equiv L$ thì $AH\cdot AL=AZ\cdot AL$ nên $AH=AZ$, tức $H\equiv Z$, và $X,Y,H$ thẳng hàng theo Bước 1.
+
+Nếu $W\not\equiv L$, từ $\dfrac{AZ}{AL}=\dfrac{AH}{AW}$ và góc $A$ chung, ta có $\triangle AZH\sim\triangle ALW$. Suy ra $\widehat{AZH}=\widehat{ALW}=90^\circ$, tức $HZ\perp AW$.
+
+**Kết luận.** Do $A,Z,W$ thẳng hàng nên $HZ\perp ZW$. Kết hợp với $XY\perp ZW$ tại $Z$ (Bước 1), ba điểm $X,Y,H$ cùng nằm trên đường thẳng qua $Z$ vuông góc với $ZW$. Vậy $X,Y,H$ thẳng hàng. $\square$`
         },
         {
           de: String.raw`Cho tam giác nhọn $ABC$ ($BA>BC$) nội tiếp đường tròn tâm $O$. Tia phân giác trong góc $B$ cắt đường tròn $(O)$ tại $M$. Đường tròn đường kính $BM$ cắt các tia phân giác $\widehat{AOB}$, $\widehat{BOC}$ lần lượt tại $P$, $Q$. Trên $PQ$ lấy điểm $R$ sao cho $RB=RM$. Chứng minh rằng $BR$ song song với $AC$.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt17-parallel" data-img-src="BT17.png"></div>
+
+Kí hiệu $\omega$ là đường tròn đường kính $BM$ (đi qua $P,Q$). Gọi $E$ là trung điểm của $BM$, khi đó $E$ là tâm của $\omega$. Gọi $G,F$ lần lượt là trung điểm của $AB,BC$ và $H$ là giao điểm thứ hai của $OM$ với $\omega$ ($H\neq M$). Vì $OA=OB=OC$ nên các tia phân giác của $\widehat{AOB},\widehat{BOC}$ chính là các tia $OG,OF$; do đó $P\in OG$ và $Q\in OF$.
+
+**Bước 1: $O,E,R$ thẳng hàng.** Vì $OB=OM$ và $RB=RM$ nên $O,R$ cùng thuộc đường trung trực của $BM$, đường này đi qua trung điểm $E$. Do $AB>BC$ nên đường phân giác $BM$ không đi qua $O$, tức $E\neq O$. Vậy $O,E,R$ thẳng hàng.
+
+**Bước 2: sáu điểm cùng thuộc một đường tròn.** Ta có
+$$\widehat{BGO}=\widehat{BFO}=\widehat{BEO}=\widehat{BHO}=90^\circ$$
+(các góc lần lượt vì $OG\perp AB$, $OF\perp BC$, $OE\perp BM$ và $\widehat{BHM}=90^\circ$ do $BM$ là đường kính của $\omega$). Vậy $B,H,O,E,G,F$ cùng thuộc đường tròn đường kính $BO$; kí hiệu là $\Gamma$.
+
+**Bước 3: $OE$ là phân giác ngoài của góc $POQ$.** Trong $\Gamma$ ta có
+$$\widehat{EOF}=\widehat{EBF}=\widehat{EBG}=\widehat{EOG}=\widehat{GOR},$$
+trong đó đẳng thức giữa hai góc ở giữa là do $BE$ là phân giác của $\widehat{ABC}$. Điểm $E$ là điểm chính giữa của cung $GF$ không chứa $B$, và $O$ cũng thuộc cung này (vì $B,G,O,F$ là bốn đỉnh liên tiếp của tứ giác nội tiếp), nên $OE$ là phân giác **ngoài** của góc $\widehat{GOF}=\widehat{POQ}$. Vậy $OR$ là phân giác ngoài tại $O$ của tam giác $POQ$.
+
+**Bước 4: $PQEO$ nội tiếp.** Vì $E$ là tâm của $\omega$ nên $EP=EQ$, tức $E$ thuộc trung trực của $PQ$. Mặt khác $E$ thuộc phân giác ngoài tại $O$ của tam giác $POQ$. Giao điểm của trung trực của $PQ$ và phân giác (trong hoặc ngoài) tại $O$ nằm trên đường tròn $(POQ)$, nên tứ giác $PQEO$ nội tiếp.
+
+**Bước 5: $B,H,R$ thẳng hàng.** Xét ba đường tròn $\omega=(BMQ)$, $\Gamma=(BHO)$ và $(POQ)$. Ba trục đẳng phương của từng cặp là
+$$\omega,\Gamma:\ BH;\qquad \Gamma,(POQ):\ OE;\qquad \omega,(POQ):\ PQ.$$
+Do $R=OE\cap PQ$ nên $R$ là tâm đẳng phương của ba đường tròn, suy ra $R$ thuộc $BH$. Vậy $B,H,R$ thẳng hàng.
+
+**Kết luận.** Vì $\widehat{BHM}=90^\circ$ nên $BH\perp OM$. Mặt khác $M$ là điểm chính giữa cung $AC$ nên $OM\perp AC$. Do đó $BH\parallel AC$, hay $BR\parallel AC$. $\square$`
         },
         {
           de: String.raw`Cho tam giác $ABC$ có độ dài ba cạnh đôi một khác nhau, nội tiếp đường tròn $\Gamma$. Gọi $M$ là trung điểm $BC$ và $P$ là một điểm trên đoạn $AM$. Các đường tròn $(BPM)$ và $(CPM)$ lần lượt cắt $\Gamma$ tại điểm thứ hai là $D$, $E$. Đường thẳng $DP$ và $EP$ cắt các đường tròn $(CPM)$, $(BPM)$ lần lượt tại điểm thứ hai là $X$, $Y$. Chứng minh rằng khi $P$ di chuyển trên đoạn $AM$, đường tròn $(AXY)$ luôn đi qua một điểm cố định khác $A$.`,
           doKho: "kho",
-          dapAn: ""
+          dapAn: String.raw`**Lời giải.**
+
+<div class="img-placeholder" data-img-slot="bt18-fixed-circle" data-img-src="BT18.png"></div>
+
+Trong lời giải này, $\measuredangle(a,b)$ kí hiệu góc định hướng giữa hai đường thẳng $a,b$ (theo modulo $180^\circ$). Gọi $Q,R$ lần lượt là giao điểm thứ hai của $PD,PE$ với $\Gamma$ (khác $D,E$).
+
+**Bước 1: $BYCX$ nội tiếp.**
+
+Gọi $N$ là tâm đẳng phương của $\Gamma,(PMB),(PMC)$. Các trục đẳng phương là $BD$ (của $\Gamma,(PMB)$), $CE$ (của $\Gamma,(PMC)$) và $PM$ (của $(PMB),(PMC)$), nên $N=BD\cap CE\cap AM$.
+
+Vì $C,P,M,X$ đồng viên và $B,P,M,D$ đồng viên, đồng thời $X,P,D$ thẳng hàng nên
+$$\measuredangle(XC,XD)=\measuredangle(XC,XP)=\measuredangle(MC,MP)=\measuredangle(MB,MP)=\measuredangle(DB,DP)=\measuredangle(DB,DX).$$
+Suy ra $\measuredangle(XC,DB)=\measuredangle(XC,XD)+\measuredangle(XD,DB)=0$, tức $CX\parallel DB$, hay $CX\parallel DN$. Chứng minh tương tự, $BY\parallel EC$, hay $BY\parallel NC$.
+
+Gọi $L$ là giao điểm của $CX$ và $BY$. Khi đó $NBLC$ là hình bình hành. Do $M$ là trung điểm của $BC$ nên $M$ cũng là trung điểm của $NL$, và vì $N\in AM$ nên $L\in AM$, tức $L,P,M$ thẳng hàng. Do đó
+$$LB\cdot LY=\mathscr{P}_{L/(PMB)}=LP\cdot LM=\mathscr{P}_{L/(PMC)}=LC\cdot LX$$
+nên $BYCX$ nội tiếp.
+
+**Bước 2: $XQYR$ nội tiếp.**
+
+Vì $BYCX$ nội tiếp, $BY\parallel CE$ và $B,C,D,E\in\Gamma$ nên
+$$\measuredangle(XC,XY)=\measuredangle(BC,BY)=\measuredangle(CB,CE)=\measuredangle(DB,DE).$$
+Mà $XC\parallel DB$ nên suy ra $XY\parallel DE$.
+
+Do $X,D,Q$ thẳng hàng, $R,P,E,Y$ thẳng hàng và $D,E,Q,R\in\Gamma$ nên
+$$\measuredangle(XQ,XY)=\measuredangle(DQ,DE)=\measuredangle(RQ,RE)=\measuredangle(RQ,RY).$$
+Vậy $X,R,Y,Q$ đồng viên.
+
+Gọi $S$ là tâm đẳng phương của ba đường tròn $(BYCX),(RYQX),\Gamma$ thì các trục đẳng phương $XY,\ BC,\ RQ$ đồng quy tại $S$.
+
+**Bước 3: $(AXTY)$ nội tiếp và $T$ cố định.**
+
+Gọi $T$ là giao điểm thứ hai của $AS$ và $\Gamma$. Ta có
+$$SY\cdot SX=SR\cdot SQ=SA\cdot ST$$
+nên bốn điểm $A,X,T,Y$ cùng thuộc một đường tròn, tức $(AXY)$ đi qua $T$.
+
+Ta chứng minh $T$ cố định. Trước hết, $Q,R$ cố định vì
+$$\measuredangle(DB,DQ)=\measuredangle(DB,DP)=\measuredangle(MB,MP)=\measuredangle(BC,AM)=:\theta,$$
+$$\measuredangle(EC,ER)=\measuredangle(EC,EP)=\measuredangle(MC,MP)=\measuredangle(BC,AM)=\theta,$$
+là các góc không đổi. Theo định lí góc nội tiếp, phép quay tâm $O$ (tâm của $\Gamma$) góc $2\theta$ biến $B\mapsto Q$ và $C\mapsto R$; do đó $Q,R$ cố định và đường thẳng $QR$ là ảnh của $BC$ qua phép quay này.
+
+Hai đường thẳng $BC$ và $QR$ hợp với nhau góc $2\theta$. Vì $AM$ cắt $BC$ tại $M$ nên $\theta\not\equiv 0$; và vì $AB\neq AC$ nên $AM$ không vuông góc với $BC$, tức $\theta\not\equiv 90^\circ$. Do đó $2\theta\not\equiv 0\pmod{180^\circ}$, hay $QR$ không song song với $BC$, và $S=BC\cap QR$ là điểm cố định.
+
+Vậy $T=AS\cap\Gamma$ (khác $A$) là điểm cố định, và đường tròn $(AXY)$ luôn đi qua $T$. $\square$`
         }
       ]
     }
